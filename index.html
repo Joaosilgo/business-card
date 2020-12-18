@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang="pt">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>João Gomes Business Card</title>
+	<meta name="description" content="AR.js Business Card">
+	<meta name="author" content="João Gomes">
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+	<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+	<!-- <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script> -->
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+	<script src="js/component.js"></script>
+	<script src="/js/cursor.js"></script>
+	<!-- import events.js script -->
+
+
+
+	<!--
+	<script>
+
+var m = document.querySelector("a-marker")
+
+
+m.addEventListener("markerLost", (e)=>{
+   console.log("lost")
+})
+
+m.addEventListener("markerFound", (e)=>{
+   console.log("found")
+
+
+	  AFRAME.registerComponent('navigate-on-click', {
+	    schema: {
+	      url: {default: ''}
+	    },
+	    init: function () {
+	      var data = this.data;
+	      var el = this.el;
+	      el.addEventListener('click', function () {
+		window.open(data.url, '_blank');
+	      });
+	    }
+	  });     
+	  
+	})
+	</script>
+	-->
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded gesture-detector
+		arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;">
+
+
+		<a-assets>
+			<img id="github_icon" src="assets/github-icon.png">
+			<img id="pinterest_icon" src="assets/pinterest-icon.webp">
+			<img id="linkedin_icon" src="assets/linkedin-icon.png">
+			<img id="facebook_icon" src="assets/facebook-icon.png">
+			<img id="website_icon" src="assets/website-icon.png">
+		</a-assets>
+
+		<!--	<a-plane rotation="-90 0 0" color="#0000ffff" opacity="0.5" navigate-on-click="url: https://github.com/joaosilgo/"> 		</a-plane> -->
+		<a-image position="0 0.5 0" rotation="-90 0 0" color="#0000ffff" opacity="0.95"
+			navigate-on-click="url: https://github.com/joaosilgo/"
+			src="https://avatars3.githubusercontent.com/u/16992593?v=4"></a-image>
+
+
+
+		<a-image position="-1 0.5 1" rotation="-90 0 0" opcatity="1" opacity="1" height="0.3" width="0.3"
+			src="#website_icon" navigate-on-click="url: https://github.com/joaosilgo"></a-image>
+		<a-image position="-0.5 0.5 1" rotation="-90 0 0" opcatity="1" opacity="1" height="0.3" width="0.3"
+			src="#github_icon" navigate-on-click="url: https://github.com/joaosilgo"></a-image>
+		<a-image position="0 0.5 1" rotation="-90 0 0" opcatity="1" opacity="1" height="0.3" width="0.3"
+			src="#linkedin_icon" navigate-on-click="url: https://github.com/joaosilgo"></a-image>
+		<a-image position="0.5 0.5 1" rotation="-90 0 0" opcatity="1" opacity="1" height="0.3" width="0.3"
+			src="#facebook_icon" navigate-on-click="url: https://github.com/joaosilgo/"></a-image>
+		<a-image position="1 0.5 1" rotation="-90 0 0" opcatity="1" opacity="1" height="0.3" width="0.3"
+			src="#pinterest_icon" navigate-on-click="url: https://github.com/joaosilgo/"></a-image>
+
+
+
+		<!--<a-plane position="1.2 0 0" width="1" height="1" rotation="-90 0 0" opacity="0.95"> </a-plane>	 -->
+		<a-text position="0.5 0.5 0" rotation="-90 0 0" wrap-count="100"
+			value="Finalist in Computer Engineering Degree, for the last three consecutive years i had the opportunity of acquire technical knowledge and practices at the level of various programming languages ​​and business management where various work methodology was imposed, methodology based on requirements gathering, analysis, design, implementation, installation, maintenance as well as a project management. It has been a course with a strong component of practice, where I have been acquiring a lot of knowledge that serves as a basis for entering in the market. At this point is only missing an internship component curriculum for finish the degree.">
+		</a-text>
+
+
+		<a-entity camera id="camera"></a-entity>
+		<a-marker-camera preset='hiro' cursor=" rayOrigin: mouse" smooth='true'></a-marker-camera>
+	</a-scene>
+</body>
+
+</html>
